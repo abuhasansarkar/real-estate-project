@@ -1,0 +1,145 @@
+@import "../../responsive.scss";
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 30px;
+      font-weight: bold;
+      color: teal;
+
+      svg {
+        font-size: 40px;
+        color: teal;
+      }
+
+      @include lg {
+        span {
+          display: none;
+        }
+      }
+      @include sm {
+        span {
+          display: initial;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      li {
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-size: 16px;
+      }
+
+      @include lg {
+        gap: 20px;
+      }
+      @include sm {
+        display: none;
+      }
+    }
+  }
+
+  .right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: end;
+    background: rgb(230, 228, 228);
+    padding: 20px 0;
+    position: relative;
+
+    @include sm {
+      background: transparent;
+    }
+
+    button {
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+
+      &:nth-child(1) {
+        background: transparent;
+        color: teal;
+      }
+
+      &:nth-child(2) {
+        background: teal;
+        color: white;
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    .menuIcon {
+      display: none;
+      z-index: 999;
+      cursor: pointer;
+      color: #000000;
+      font-size: 30px;
+      @include sm {
+        display: initial;
+      }
+    }
+
+    .mobileMenu {
+      display: none;
+      transition: all 1s ease;
+      @include sm {
+        display: initial;
+        position: absolute;
+        width: 300px;
+        background: teal;
+        height: 100vh;
+        top: 0;
+        right: -20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        transform: translateX(500px);
+        li {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .button {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+
+          li {
+            padding: 8px 20px;
+            background: #000;
+            color: #fff;
+            font-size: 18px;
+          }
+        }
+      }
+      &.active {
+        right: -20px;
+        transform: translateX(0px);
+      }
+    }
+  }
+}

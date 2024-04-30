@@ -1,0 +1,12 @@
+@import "./responsive.scss";
+
+.MainContainer {
+  height: 100vh;
+  max-width: 1366px;
+  margin: auto;
+  padding: 0 20px;
+
+  @include lg {
+    background: #eaeaea;
+  }
+}

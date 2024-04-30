@@ -1,0 +1,20 @@
+.singleList {
+  display: flex;
+  height: calc(100vh - 50px);
+  .listDetails {
+    flex: 4;
+
+    .wrapper {
+      padding-right: 50px;
+    }
+  }
+  .listFeatures {
+    flex: 2;
+    background: rgb(230, 228, 228);
+    height: 100vh;
+
+    .wrapper {
+      padding: 0 20px;
+    }
+  }
+}
