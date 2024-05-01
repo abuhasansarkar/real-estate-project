@@ -1,9 +1,14 @@
+import "./profile.scss";
 import { PropertyCard } from "../../components/propertyCard/PropertyCard";
 import { listData, userData } from "../../lib/propertyData.js";
-import "./profile.scss";
+import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
+import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
+import CloseIcon from "@mui/icons-material/Close";
+import { useState } from "react";
 
 export const Profile = () => {
   // console.log(listData);
+  const [chat, setChat] = useState(null);
   return (
     <div className="profile">
       <div className="userInfo">
@@ -42,6 +47,21 @@ export const Profile = () => {
         <div className="wrapper">
           <div className="userArea">
             <h4>Message</h4>
+            <div onClick={() => setChat(1)} className="user">
+              <img src={userData.img} alt="userImg" />
+              <strong>AbuHasan Sarkar</strong>
+              <em>Lorem ipsum dolor sit amet consectetur </em>
+            </div>
+            <div className="user">
+              <img src={userData.img} alt="userImg" />
+              <strong>AbuHasan Sarkar</strong>
+              <em>Lorem ipsum dolor sit amet consectetur </em>
+            </div>
+            <div className="user">
+              <img src={userData.img} alt="userImg" />
+              <strong>AbuHasan Sarkar</strong>
+              <em>Lorem ipsum dolor sit amet consectetur </em>
+            </div>
             <div className="user">
               <img src={userData.img} alt="userImg" />
               <strong>AbuHasan Sarkar</strong>
@@ -64,10 +84,78 @@ export const Profile = () => {
             </div>
           </div>
 
-          <div className="button">
-            <button>Save</button>
-            <button>Chat</button>
+          <div className="btnBox">
+            <button>
+              <ChatOutlinedIcon /> Send Message
+            </button>
+            <button>
+              <BookmarkBorderOutlinedIcon /> Save the Place
+            </button>
           </div>
+          {chat && (
+            <div className="chatBox">
+              <div className="user">
+                <div className="userInfo">
+                  <img
+                    src="../../../src/assets/download.jpg"
+                    alt="User Image"
+                  />
+                  AbuHasan Sarkar
+                </div>
+                <span onClick={() => setChat(null)}>
+                  <CloseIcon />
+                </span>
+              </div>
+              <div className="userMessage">
+                <div className="message">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <em>1 hour ago</em>
+                </div>
+                <div className="message own">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <em>1 hour ago</em>
+                </div>
+                <div className="message">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <em>1 hour ago</em>
+                </div>
+                <div className="message own">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <em>1 hour ago</em>
+                </div>
+                <div className="message">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <em>1 hour ago</em>
+                </div>
+                <div className="message own">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <em>1 hour ago</em>
+                </div>
+                <div className="message own">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                  <em>1 hour ago</em>
+                </div>
+              </div>
+              <div className="userChat">
+                <textarea name="message" rows="1"></textarea>
+                <button>Send</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

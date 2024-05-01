@@ -7,7 +7,7 @@ import BookmarkOutlinedIcon from "@mui/icons-material/BookmarkOutlined";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 
 export const PropertyCard = ({ data }) => {
-  console.log(data.address);
+  // console.log(data.address);
   return (
     <div className="card">
       <div className="img">
