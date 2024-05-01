@@ -1,10 +1,13 @@
 import "./sideBarMap.scss";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 
 import "leaflet/dist/leaflet.css";
 import { Pin } from "../pin/Pin";
 
 export const SideBarMap = ({ items }) => {
+  // console.log(items.latitude);
+  // console.log(items[0].latitude);
+
   const position = [51.505, -0.09];
   return (
     <MapContainer

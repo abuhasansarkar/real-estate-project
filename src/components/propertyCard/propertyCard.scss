@@ -1,3 +1,4 @@
+@import "../../../src/responsive.scss";
 .card {
   display: flex;
   align-items: center;
@@ -12,6 +13,10 @@
       height: 250px;
       object-fit: cover;
       border-radius: 20px;
+
+      @include sm {
+        height: 200px;
+      }
     }
   }
   .text {
@@ -20,9 +25,16 @@
     flex-direction: column;
     gap: 30px;
 
+    @include sm {
+      gap: 10px;
+    }
+
     h3 {
       font-size: 24px;
       text-transform: capitalize;
+      @include sm {
+        font-size: 18px;
+      }
     }
 
     span {
@@ -45,10 +57,19 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      @include sm {
+        flex-direction: column;
+        gap: 5px;
+        text-align: start;
+      }
 
       span {
         cursor: pointer;
         color: #333;
+
+        @include sm {
+          font-size: 14px;
+        }
       }
     }
 

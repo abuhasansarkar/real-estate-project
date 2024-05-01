@@ -74,6 +74,8 @@
       border: none;
       padding: 10px 20px;
       font-size: 18px;
+      margin-right: 20px;
+      border-radius: 10px;
 
       &:nth-child(1) {
         background: transparent;
@@ -90,9 +92,55 @@
       }
     }
 
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      .userInfo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 100%;
+          border: 2px solid teal;
+        }
+      }
+      a {
+        background: teal;
+        padding: 10px 20px;
+        margin-right: 20px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+      }
+
+      .badge {
+        position: absolute;
+        right: 10px;
+        top: -5px;
+        width: 20px;
+        height: 20px;
+        background: red;
+        text-align: center;
+        color: white;
+        border-radius: 100%;
+      }
+    }
+    @include sm {
+      .user {
+        display: none;
+      }
+    }
+
     .menuIcon {
       display: none;
-      z-index: 999;
+      z-index: 99999;
       cursor: pointer;
       color: #000000;
       font-size: 30px;
@@ -104,6 +152,7 @@
     .mobileMenu {
       display: none;
       transition: all 1s ease;
+      z-index: 9999;
       @include sm {
         display: initial;
         position: absolute;
@@ -117,28 +166,58 @@
         justify-content: center;
         align-items: center;
         gap: 30px;
+        padding: 30px;
 
         transform: translateX(500px);
         li {
           font-size: 20px;
           font-weight: bold;
+          padding: 10px 0;
+          text-align: center;
         }
         .button {
           display: flex;
           gap: 20px;
           align-items: center;
+          margin: 10px 0;
 
           li {
             padding: 8px 20px;
             background: #000;
             color: #fff;
             font-size: 18px;
+        
           }
         }
       }
       &.active {
         right: -20px;
         transform: translateX(0px);
+      }
+      @include sm {
+        .user {
+          display: flex;
+          justify-content: center;
+          .badge {
+        position: absolute;
+        right: -5px;
+        top: 5px;
+      }
+          .userInfo {
+            // flex-direction: column;
+            gap: 10px;
+            justify-content: start;
+            text-align: left;
+          }
+          a {
+            color: #000;
+            background: #fff;
+            font-size: 16px;
+            padding: 8px 15px;
+            text-align: center;
+            display: block;
+          }
+        }
       }
     }
   }

@@ -1,3 +1,5 @@
+@import "../../../src/responsive.scss";
+
 .searchArea {
   h3 {
     color: teal;
@@ -24,7 +26,10 @@
       align-items: end;
       gap: 10px;
       justify-content: space-between;
-
+      @include sm {
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
       .item {
         display: flex;
         flex-direction: column;
@@ -35,6 +40,13 @@
           width: 130px;
           border: 1px solid teal;
           border-radius: 5px;
+
+          @include lg {
+            width: 80px;
+          }
+          @include sm {
+            width: 80px;
+          }
         }
       }
 

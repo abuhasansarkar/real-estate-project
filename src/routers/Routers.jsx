@@ -3,6 +3,7 @@ import { Layout } from "../pages/layout/Layout";
 import { Home } from "../pages/home/Home";
 import { PropertyList } from "../pages/propertyList/PropertyList";
 import { SingleList } from "../pages/singleList/SingleList";
+import { Profile } from "../pages/profile/Profile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/list/:id",
         element: <SingleList />,
+      },
+      {
+        path: "/profile/:username",
+        element: <Profile />,
       },
     ],
   },
